@@ -1,0 +1,49 @@
+<p>
+    You have to write a function that receives a date and a dictionary of birthdates,
+    and return the number of days before the next birthday and the age they will be.
+</p>
+
+<p>
+    <strong>Note on leap days:</strong>
+    If someone is born on February 29th, then he or she will
+    celebrate birthdays on March 1st when necessary.
+</p>
+
+
+<p>
+    <strong>Input:</strong> two arguments:
+    <ul>
+        <li>a date, tuple of three integers: (year, month, day)</li>
+        <li>a dictionary: keys are string and values are dates.</li>
+    </ul>
+    <strong>Output:</strong>
+    an integer and a dictionary (keys are string and values are integers).
+</p>
+
+
+<div class="for_info_only">
+<strong>Examples:</strong>
+<br>
+<pre class="brush: python">
+birthdates = {
+    'Brian': (1967, 5, 31),
+    'Léna': (1970, 10, 3),
+    'Philippe': (1991, 6, 15),
+    'Yasmine': (1996, 2, 29),
+    'Emma': (2000, 12, 25),
+}
+next_birthday((2020, 9, 8), birthdates) == (25, {'Léna': 50})
+next_birthday((2021, 10, 4), birthdates) == (82, {'Emma': 21})
+next_birthday((2022, 3, 1), birthdates) == (0, {'Yasmine': 26})
+</pre>
+</div>
+
+
+<p>
+    <strong>Preconditions:</strong>
+    <ul>
+        <li>All the dates are valids (see datetime module) and next birthdays are valids for everyone.</li>
+        <li>Everyone is alive: <code>all(today >= birthdate for birthdate in birthdates.values())</code></li>
+        <li><code>birthdates</code> is never empty.</li>
+    </ul>
+</p>
