@@ -15,11 +15,7 @@ def next_birthday(day, births):
                 birthday = birthdate.replace(year=year)
             except ValueError:
                 # If "February 29th" does not exists then it is "March 1st".
-                try:
-                    birthday = date(year, 3, 1)
-                except ValueError:
-                    print(day, births)
-                    raise
+                birthday = date(year, 3, 1)
             if birthday >= today:
                 break
         days = (birthday - today).days
