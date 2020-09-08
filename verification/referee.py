@@ -14,7 +14,8 @@ from tests import TESTS
 date_cover = '''
 def cover(func, data):
     today, birthdates = data
-    return func(tuple(today), {k: tuple(v) for k, v in birthdates.items()})
+    birthdates = {k: tuple(v) for k, v in birthdates.items()}
+    return list(func(tuple(today), birthdates))
 '''
 
 api.add_listener(

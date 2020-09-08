@@ -23,4 +23,4 @@ def next_birthday(day, births):
             remaining_days, ages = days, {}
         if days == remaining_days:
             ages[name] = birthday.year - birthdate.year
-    return remaining_days, ages
+    return [remaining_days, ages]

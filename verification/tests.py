@@ -74,40 +74,40 @@ TESTS = {
     '1. Basic': [
         {
             'input': ((2020, 9, 8), BASIC_FAMILY),
-            'answer': (25, {'Léna': 50}),
+            'answer': [25, {'Léna': 50}],
         },
         {
             'input': ((2021, 10, 4), BASIC_FAMILY),
-            'answer': (82, {'Emma': 21}),
+            'answer': [82, {'Emma': 21}],
         },
         {
             'input': ((2022, 3, 1), BASIC_FAMILY),
-            'answer': (0, {'Yasmine': 26}),
+            'answer': [0, {'Yasmine': 26}],
         },
     ],
     '2. World Wide Family': [
         {
             'input': ((2020, 9, 8), WORLD_WIDE_FAMILY),
-            'answer': (14, {'Inaya': 52}),
+            'answer': [14, {'Inaya': 52}],
         },
         {
             'input': ((2013, 8, 15), WORLD_WIDE_FAMILY),
-            'answer': (0, {'Kang': 1}),
+            'answer': [0, {'Kang': 1}],
             'explanation': 'Happy Birthday Kang!',
         },
         {
             'input': ((2014, 3, 29), WORLD_WIDE_FAMILY),
-            'answer': (7, {'Mia': 15, 'Youssef': 22}),
+            'answer': [7, {'Mia': 15, 'Youssef': 22}],
             'explanation': 'Two birthdays on April 5th.',
         },
         {
             'input': ((2024, 2, 29), WORLD_WIDE_FAMILY),
-            'answer': (0, {'Jiao': 36, 'Moussa': 48}),
+            'answer': [0, {'Jiao': 36, 'Moussa': 48}],
             'explanation': 'Two birthdays on February 29th.',
         },
         {
             'input': ((2025, 3, 1), WORLD_WIDE_FAMILY),
-            'answer': (0, {'Jiao': 37, 'Moussa': 49}),
+            'answer': [0, {'Jiao': 37, 'Moussa': 49}],
             'explanation': 'Two birthdays on February 29th, '
                            'reported to March 1st.',
         },

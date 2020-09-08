@@ -23,7 +23,7 @@ if __name__ == '__main__':
     ]
 
     for nb, (day, answer) in enumerate(TESTS, 1):
-        user_result = next_birthday(day, FAMILY.copy())
+        user_result = tuple(next_birthday(day, FAMILY.copy()))
         if user_result != answer:
             print(f'You failed the test #{nb}.')
             print(f'Your result: {user_result}')
