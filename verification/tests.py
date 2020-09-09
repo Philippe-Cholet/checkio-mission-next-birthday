@@ -69,7 +69,6 @@ def random_input(nb: int, max_range=80, max_future=20):
     return random_date_after(max(births), max_future), dict(zip(names, births))
 
 
-# 21 tests: 3 basic, 6 world wide (today included), 12 random
 TESTS = {
     '1. Basic': [
         {
@@ -79,10 +78,12 @@ TESTS = {
         {
             'input': ((2021, 10, 4), BASIC_FAMILY),
             'answer': [82, {'Emma': 21}],
+            'explanation': 'Happy Xmas & Birthday!',
         },
         {
             'input': ((2022, 3, 1), BASIC_FAMILY),
             'answer': [0, {'Yasmine': 26}],
+            'explanation': 'Yasmine was born on a leap day.',
         },
     ],
     '2. World Wide Family': [
@@ -117,8 +118,25 @@ TESTS = {
             'explanation': 'Today.',
         },
     ],
-    '3. Random': [
+    # If you want to add some tests, do it here, thanks.
+    '3. More tests': [
+        {
+            'input': ((2021, 3, 1), {'A': (2000, 2, 29), 'B': (2000, 3, 1)}),
+            'answer': [0, {'A': 21, 'B': 21}],
+            'explanation': 'They did not born the same day '
+                           'but they sometimes celebrate it the same day.',
+        },
+    ],
+    '4. Random': [
         {'input': data, 'answer': next_birthday(*data)}
         for data in map(random_input, range(3, 27, 2))
     ],
 }
+
+
+if __name__ == '__main__':
+    for tests in TESTS.values():
+        for test in tests:
+            assert next_birthday(*test['input']) == test['answer'], \
+                test['explanation']
+    print('Checked')
