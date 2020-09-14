@@ -119,12 +119,6 @@ TESTS = {
             'answer': next_birthday(today, WORLD_WIDE_FAMILY),
             'explanation': 'Today.',
         },
-        {
-            'input': (today, {'Baby': yesterday}),
-            'answer': next_birthday(today, {'Baby': yesterday}),
-            'explanation': 'Baby was born yesterday, '
-                           'his/her birthday is nearly a year after.',
-        },
     ],
     # If you want to add some tests, do it here, thanks.
     '3. More tests': [
@@ -133,6 +127,12 @@ TESTS = {
             'answer': [0, {'A': 21, 'B': 21}],
             'explanation': 'They did not born the same day '
                            'but they sometimes celebrate it the same day.',
+        },
+        {
+            'input': (today, {'Baby': yesterday}),
+            'answer': next_birthday(today, {'Baby': yesterday}),
+            'explanation': 'Baby was born yesterday, '
+                           'his/her birthday is nearly a year after.',
         },
     ],
     '4. Random': [
