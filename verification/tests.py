@@ -129,6 +129,12 @@ TESTS = {
                            'but they sometimes celebrate it the same day.',
         },
         {
+            'input': ((2017, 3, 1), {'Baby': (2016, 2, 29)}),
+            'answer': [0, {'Baby': 1}],
+            'explanation': 'First birthday for this baby '
+                           'who was born on leap day.',
+        },
+        {
             'input': (today, {'Baby': yesterday}),
             'answer': next_birthday(today, {'Baby': yesterday}),
             'explanation': 'Baby was born yesterday, '
