@@ -1,4 +1,4 @@
-from datetime import MINYEAR, MAXYEAR, date
+from datetime import MINYEAR, MAXYEAR, date, timedelta
 from random import randint, sample
 from string import ascii_uppercase
 
@@ -37,6 +37,8 @@ WORLD_WIDE_FAMILY = {
 
 _today = date.today()
 today = _today.year, _today.month, _today.day
+_yesterday = _today - timedelta(days=1)
+yesterday = _yesterday.year, _yesterday.month, _yesterday.day
 
 
 def random_date(min_year: int, diff: int):
@@ -116,6 +118,12 @@ TESTS = {
             'input': (today, WORLD_WIDE_FAMILY),
             'answer': next_birthday(today, WORLD_WIDE_FAMILY),
             'explanation': 'Today.',
+        },
+        {
+            'input': (today, {'Baby': yesterday}),
+            'answer': next_birthday(today, {'Baby': yesterday}),
+            'explanation': 'Baby was born yesterday, '
+                           'his/her birthday is nearly a year after.',
         },
     ],
     # If you want to add some tests, do it here, thanks.
