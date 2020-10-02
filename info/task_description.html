@@ -12,13 +12,13 @@
 
 
 <p>
-    <strong>Input:</strong> two arguments:
+    <strong>Input:</strong> Two arguments:
     <ul>
-        <li>a tuple of three integers (year, month, day) representing a date</li>
+        <li>a tuple of three integers (year, month, day) representing a date;</li>
         <li>a dictionary: keys are string and values are dates.</li>
     </ul>
     <strong>Output:</strong>
-    an integer and a dictionary (keys are string and values are integers).
+    An integer and a dictionary (keys are string and values are integers).
 </p>
 
 
@@ -43,7 +43,7 @@ next_birthday((2022, 3, 1), birthdates) == (0, {'Yasmine': 26})
 <p>
     <strong>Preconditions:</strong>
     <ul>
-        <li>All the dates are valids (see datetime module) and next birthdays are valids for everyone.</li>
+        <li>All the dates are valid (see a datetime module) and the next birthdays are valid for everyone.</li>
         <li>Everyone is alive: <code>all(today >= birthdate for birthdate in birthdates.values())</code></li>
         <li><code>birthdates</code> is never empty.</li>
     </ul>
