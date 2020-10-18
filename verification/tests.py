@@ -140,6 +140,11 @@ TESTS = {
             'explanation': 'Baby was born yesterday, '
                            'his/her birthday is nearly a year after.',
         },
+        # Contribution from vvm70.
+        {
+            'input': ((2024, 3, 1), {'Baby': (2020, 2, 29)}),
+            'answer': [365, {'Baby': 5}],
+        },
     ],
     '4. Random': [
         {'input': data, 'answer': next_birthday(*data)}
